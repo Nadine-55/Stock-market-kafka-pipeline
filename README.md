@@ -20,7 +20,7 @@ yfinance API -> Kafka Producer -> Kafka Topic -> Kafka Consumer -> Amazon S3 -> 
 
 1. **Producer** (`KafkaProducer.ipynb`): fetches live stock data via `yfinance` and publishes it to a Kafka topic
 2. **Consumer** (`KafkaConsumer.ipynb`): subscribes to the topic and writes each record as a JSON file to an S3 bucket
-3. **Athena** — queries the JSON files in S3 directly using a table schema defined in Glue, no data movement required
+3. **Athena**: queries the JSON files in S3 directly using a table schema defined in Glue, no data movement required
 
 ## Setup
 
