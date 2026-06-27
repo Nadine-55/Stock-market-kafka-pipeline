@@ -9,17 +9,17 @@ yfinance API -> Kafka Producer -> Kafka Topic -> Kafka Consumer -> Amazon S3 -> 
 
 ## Tech Stack
 
-- **Apache Kafka** — real-time message streaming (producer/consumer)
-- **Docker / Docker Compose** — containerized Kafka & ZooKeeper for local development
-- **Python** — `kafka-python`, `yfinance`, `pandas`
-- **Amazon S3** — data lake storage (JSON)
-- **AWS Glue** — schema/table definition
-- **Amazon Athena** — serverless SQL querying
+- **Apache Kafka**: real-time message streaming (producer/consumer)
+- **Docker / Docker Compose**: containerized Kafka & ZooKeeper for local development
+- **Python**: `kafka-python`, `yfinance`, `pandas`
+- **Amazon S3**: data lake storage (JSON)
+- **AWS Glue**: schema/table definition
+- **Amazon Athena**: serverless SQL querying
 
 ## How It Works
 
-1. **Producer** (`KafkaProducer.ipynb`) — fetches live stock data via `yfinance` and publishes it to a Kafka topic
-2. **Consumer** (`KafkaConsumer.ipynb`) — subscribes to the topic and writes each record as a JSON file to an S3 bucket
+1. **Producer** (`KafkaProducer.ipynb`): fetches live stock data via `yfinance` and publishes it to a Kafka topic
+2. **Consumer** (`KafkaConsumer.ipynb`): subscribes to the topic and writes each record as a JSON file to an S3 bucket
 3. **Athena** — queries the JSON files in S3 directly using a table schema defined in Glue, no data movement required
 
 ## Setup
